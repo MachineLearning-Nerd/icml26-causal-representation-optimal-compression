@@ -1,0 +1,69 @@
+{
+  "claims": {
+    "C1_gen_bound": {
+      "empirical_risk": 0.0891,
+      "imbalance": 0.149482,
+      "alpha_hat": 0.0,
+      "bound_value": 0.0891,
+      "bound_is_upper": true,
+      "VERDICT": "VERIFIED"
+    },
+    "C2_deviation": {
+      "deviation_by_n": {
+        "80": 0.041833,
+        "200": 0.021575,
+        "500": 0.018103,
+        "1000": 0.014921
+      },
+      "population_HSIC": 0.231541,
+      "deviation_shrinks": true,
+      "VERDICT": "VERIFIED"
+    },
+    "C3_hsic_O1": {
+      "cases": [
+        {
+          "K": 2,
+          "HSIC": 0.010219,
+          "time_s": 0.0477
+        },
+        {
+          "K": 5,
+          "HSIC": 0.020746,
+          "time_s": 0.0563
+        },
+        {
+          "K": 10,
+          "HSIC": 0.024546,
+          "time_s": 0.0409
+        },
+        {
+          "K": 20,
+          "HSIC": 0.016151,
+          "time_s": 0.0619
+        },
+        {
+          "K": 50,
+          "HSIC": 0.020507,
+          "time_s": 0.0549
+        }
+      ],
+      "max_time_ratio": 1.51,
+      "O1_wrt_K": true,
+      "VERDICT": "VERIFIED"
+    },
+    "C4_normality": {
+      "mean": 0.108,
+      "std": 0.454,
+      "excess_kurtosis": -0.085,
+      "approximately_normal": true,
+      "VERDICT": "VERIFIED"
+    },
+    "C5_pairwise_vs_agg": {
+      "mean_pairwise_imbalance": 0.247545,
+      "aggregation_imbalance": 0.147309,
+      "pairwise_count": 186,
+      "aggregation_stable_vs_pairwise": true,
+      "VERDICT": "VERIFIED"
+    }
+  }
+}

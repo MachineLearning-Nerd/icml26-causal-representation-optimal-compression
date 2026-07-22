@@ -1,0 +1,8 @@
+.venv/
+upstream/
+__pycache__/
+*.pyc
+.env
+.trackio/workspace/
+outputs/*.log
+docs/*.txt
