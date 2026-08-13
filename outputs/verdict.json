@@ -1,4 +1,10 @@
 {
+  "paper": "puNfWfBFNT",
+  "title": "Causal Representation Learning with Optimal Compression under Complex Treatments",
+  "arxiv": "2603.11907",
+  "paper_version_pinned": "v2 (2026-05-02)",
+  "scope": "bounded_clean_room_numpy_proxies",
+  "paper_reproduction": "inconclusive",
   "claims": {
     "C1_gen_bound": {
       "empirical_risk": 0.0891,
@@ -6,64 +12,83 @@
       "alpha_hat": 0.0,
       "bound_value": 0.0891,
       "bound_is_upper": true,
-      "VERDICT": "VERIFIED"
+      "VERDICT": "TAUTOLOGICAL_PROXY",
+      "paper_claim_reproduced": false,
+      "limitation": "The check only verifies that empirical risk plus a nonnegative proxy term is at least empirical risk; it does not evaluate population ITE risk or Lemma 3.2 assumptions."
     },
     "C2_deviation": {
       "deviation_by_n": {
-        "80": 0.041833,
-        "200": 0.021575,
+        "80": 0.042307,
+        "200": 0.021861,
         "500": 0.018103,
-        "1000": 0.014921
+        "1000": 0.015147
       },
-      "population_HSIC": 0.231541,
+      "population_HSIC": 0.229647,
       "deviation_shrinks": true,
-      "VERDICT": "VERIFIED"
+      "VERDICT": "PROXY_PASS",
+      "paper_claim_reproduced": false,
+      "limitation": "Compares finite HSIC estimates to one large finite sample; it does not estimate alpha-hat, alpha-S-bd, curvature, confidence, or the Theorem 3.5 bound."
     },
     "C3_hsic_O1": {
       "cases": [
         {
           "K": 2,
           "HSIC": 0.010219,
-          "time_s": 0.0477
+          "time_s": 0.0007
         },
         {
           "K": 5,
           "HSIC": 0.020746,
-          "time_s": 0.0563
+          "time_s": 0.0007
         },
         {
           "K": 10,
           "HSIC": 0.024546,
-          "time_s": 0.0409
+          "time_s": 0.0006
         },
         {
           "K": 20,
           "HSIC": 0.016151,
-          "time_s": 0.0619
+          "time_s": 0.0007
         },
         {
           "K": 50,
           "HSIC": 0.020507,
-          "time_s": 0.0549
+          "time_s": 0.0006
         }
       ],
-      "max_time_ratio": 1.51,
+      "max_time_ratio": 1.17,
       "O1_wrt_K": true,
-      "VERDICT": "VERIFIED"
+      "VERDICT": "PROXY_PASS",
+      "paper_claim_reproduced": false,
+      "limitation": "A few wall-clock measurements of this explicit one-hot implementation do not establish the paper's O(1)-in-K training complexity."
     },
     "C4_normality": {
-      "mean": 0.108,
+      "mean": 0.24,
       "std": 0.454,
       "excess_kurtosis": -0.085,
       "approximately_normal": true,
-      "VERDICT": "VERIFIED"
+      "VERDICT": "PROXY_PASS",
+      "paper_claim_reproduced": false,
+      "limitation": "Normality is checked for a finite HSIC statistic, not for the paper's alpha-hat profile estimator under Assumption 3.7."
     },
     "C5_pairwise_vs_agg": {
       "mean_pairwise_imbalance": 0.247545,
       "aggregation_imbalance": 0.147309,
       "pairwise_count": 186,
       "aggregation_stable_vs_pairwise": true,
-      "VERDICT": "VERIFIED"
+      "VERDICT": "PROXY_PASS",
+      "paper_claim_reproduced": false,
+      "limitation": "Counts available pairwise terms and compares one imbalance value; it does not measure PEHE, estimator variance, representation collapse, or the paper's K=20 experiment."
+    },
+    "C6_causal_egm": {
+      "paper_status": "NOT_REPRODUCED",
+      "paper_claim_reproduced": false,
+      "limitation": "Multi-Treatment CausalEGM, learned treatment embeddings, image/semi-synthetic training, PEHE, and Wasserstein-geodesic interpolation are not implemented."
     }
-  }
+  },
+  "claims_total": 6,
+  "proxy_diagnostics_passed": 4,
+  "claims_tautological_proxy": 1,
+  "paper_claims_verified": 0
 }

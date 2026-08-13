@@ -1,16 +1,18 @@
-"""Clean-room multi-treatment balancing (arXiv 2603.11907, OpenReview puNfWfBFNT).
+"""Bounded NumPy proxies for the multi-treatment balancing paper.
 
-Generalization bound for multi-treatment CATE estimation with a balancing weight alpha:
+Paper contract: arXiv:2603.11907v2 (2026-05-02), OpenReview puNfWfBFNT.
+
+The paper studies a generalization bound for multi-treatment CATE estimation
+with a balancing weight alpha:
     risk(Phi) <= empirical_risk(Phi) + alpha * imbalance(Phi) + noise
-
-The optimal alpha* minimizes the bound.  We estimate alpha from data and verify:
-- C2 (Theorem 3.5): finite-sample deviation bound |alpha_hat - alpha*| <= O(1/sqrt(n)).
-- C3: HSIC imbalance achieves O(1) computation w.r.t. K treatments.
-- C4 (Theorem 3.8): alpha_hat is asymptotically normal.
 
 Model: K treatments, covariates X in R^d, outcomes Y_k = mu_k(X) + noise.
 Representation Phi(X) = X (identity).  Balancing weight alpha trades off empirical
 risk vs the HSIC imbalance measure between Phi(X) and the treatment indicator.
+
+These functions do not implement the paper's profile objective, learned
+treatment embeddings, CausalEGM generator, Wasserstein-geodesic validation, or
+external experiments.
 """
 from __future__ import annotations
 import numpy as np
@@ -35,9 +37,12 @@ def simulate_multi_treatment(n, d, K, rng, confounding=True, fixed_logits=None, 
 
 
 def hsic_imbalance(Phi_X, T_onehot):
-    """HSIC(Phi(X), E_T) — Hilbert-Schmidt Independence Criterion between the
-    representation Phi(X) and the one-hot treatment indicator.  Cost O(n^2),
-    independent of K (the treatment dimension only affects T_onehot's columns)."""
+    """Compute a linear-kernel HSIC proxy from an explicit one-hot matrix.
+
+    The mathematical aggregation is a single HSIC statistic, but this literal
+    matrix implementation should not be advertised as a verified O(1)-in-K
+    runtime implementation of the paper's learned treatment-embedding path.
+    """
     n = Phi_X.shape[0]
     # kernel matrices
     Kx = Phi_X @ Phi_X.T  # linear kernel (RBF optional)
@@ -57,8 +62,11 @@ def one_hot(T, K):
 
 
 def optimal_balancing_weight(X, T, Y, K, lam_grid=None):
-    """Estimate the optimal balancing weight alpha by minimizing the generalization bound
-    over a grid.  The bound: empirical_risk + alpha * HSIC_imbalance + lam * ||alpha||^2."""
+    """Run a simplified alpha grid proxy.
+
+    This omits the paper's complexity term and representation optimization, so
+    its selected alpha is not the paper's bound-optimal estimator.
+    """
     n, d = X.shape
     Phi_X = X
     T_oh = one_hot(T, K)
@@ -82,5 +90,5 @@ def optimal_balancing_weight(X, T, Y, K, lam_grid=None):
 
 
 def estimate_alpha_star(X, T, Y, K):
-    """Population-optimal balancing weight (estimated from large data)."""
+    """Return a large-sample proxy, not the paper's population optimum."""
     return optimal_balancing_weight(X, T, Y, K)[0]

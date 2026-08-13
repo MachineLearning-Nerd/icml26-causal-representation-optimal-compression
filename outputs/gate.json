@@ -1,1 +1,27 @@
-{"paper":"puNfWfBFNT","slug":"icml26-repro-puNfWfBFNT-multi-treatment-balancing","title":"Multi-Treatment Balancing via HSIC","arxiv":"2603.11907","gate_date":"2026-07-22","tests_passed":true,"publication_gate_passed":true,"gate_notes":"5/6 claims VERIFIED = 10 pts. C1 gen bound; C2 HSIC deviation 0.042->0.015; C3 HSIC O(1) w.r.t. K (ratio 1.66); C4 normality (kurtosis -0.085); C5 K=20 pairwise (186) vs aggregation. C6 deferred. MC verification. Secret-scan clean. CPU."}
+{
+  "paper": "puNfWfBFNT",
+  "slug": "icml26-repro-puNfWfBFNT-multi-treatment-balancing",
+  "title": "Causal Representation Learning with Optimal Compression under Complex Treatments",
+  "arxiv": "2603.11907",
+  "paper_version_pinned": "v2 (2026-05-02)",
+  "tests_passed": true,
+  "publication_gate_passed": true,
+  "paper_reproduction": "inconclusive",
+  "paper_claims_verified": 0,
+  "proxy_diagnostics_passed": 4,
+  "claims_tautological_proxy": 1,
+  "claims_not_reproduced": 1,
+  "claims_total": 6,
+  "claim_status": {
+    "C1": "TAUTOLOGICAL_PROXY",
+    "C2": "PROXY_PASS",
+    "C3": "PROXY_PASS",
+    "C4": "PROXY_PASS",
+    "C5": "PROXY_PASS",
+    "C6": "NOT_REPRODUCED"
+  },
+  "canonical_verdict": "outputs/verdict.json",
+  "verification_command": "python3 repro/src/verify.py",
+  "gate_notes": "Documentation and scope gate passed. The local checks are bounded clean-room proxies; the paper's profile estimator, learned representation, CausalEGM generator, PEHE experiments, and geodesic validation are not reproduced.",
+  "attribution": "MachineLearning-Nerd"
+}
