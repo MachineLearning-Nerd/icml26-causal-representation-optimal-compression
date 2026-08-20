@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "paper": {
+    "title": "Causal Representation Learning with Optimal Compression under Complex Treatments",
+    "arxiv": "2603.11907",
+    "submission": "puNfWfBFNT",
+    "version": "v2 (2026-05-02)",
+    "authors": [
+      "Wanting Liang",
+      "Haoang Chi",
+      "Zhiheng Zhang"
+    ]
+  },
+  "overall_status": "INCONCLUSIVE_C1_TAUTOLOGICAL_PROXY_C2_C3_C4_C5_PROXY_ONLY_C6_NOT_REPRODUCED_NO_PAPER_CLAIMS_VERIFIED_NO_CURRENT_SCORE",
+  "claims": [
+    {
+      "id": "C1",
+      "name": "lemma3_2_generalization_bound",
+      "status": "TAUTOLOGICAL_PROXY",
+      "paper_anchor": "Lemma 3.2",
+      "production": [
+        "repro/src/core.py",
+        "repro/src/verify.py:claim_C1",
+        "outputs/verdict.json:C1_gen_bound"
+      ],
+      "scope": "Synthetic empirical risk plus a nonnegative HSIC proxy term.",
+      "metrics": {
+        "bound_is_upper": true,
+        "paper_claim_reproduced": false
+      },
+      "limitation": "The comparison is empirical risk plus a nonnegative term versus empirical risk; population ITE risk and theorem assumptions are absent."
+    },
+    {
+      "id": "C2",
+      "name": "theorem3_5_alpha_hat_deviation",
+      "status": "PROXY_PASS",
+      "paper_anchor": "Theorem 3.5",
+      "production": [
+        "repro/src/core.py",
+        "repro/src/verify.py:claim_C2",
+        "outputs/verdict.json:C2_deviation"
+      ],
+      "scope": "Finite HSIC deviations at four sample sizes with fixed assignment logits and effects.",
+      "metrics": {
+        "deviation_shrinks": true,
+        "sample_sizes": [80, 200, 500, 1000],
+        "paper_claim_reproduced": false
+      },
+      "limitation": "Alpha-hat, alpha-star, theorem constants, curvature, and confidence are not computed."
+    },
+    {
+      "id": "C3",
+      "name": "treatment_aggregation_scaling",
+      "status": "PROXY_PASS",
+      "paper_anchor": "Treatment aggregation O(1) claim",
+      "production": [
+        "repro/src/core.py",
+        "repro/src/verify.py:claim_C3",
+        "outputs/verdict.json:C3_hsic_O1"
+      ],
+      "scope": "Five local timing checks of the explicit dense one-hot HSIC path.",
+      "metrics": {
+        "K_values": [2, 5, 10, 20, 50],
+        "max_time_ratio": 1.17,
+        "paper_claim_reproduced": false
+      },
+      "limitation": "Small timings do not prove asymptotic learned training complexity in K."
+    },
+    {
+      "id": "C4",
+      "name": "theorem3_8_alpha_hat_normality",
+      "status": "PROXY_PASS",
+      "paper_anchor": "Theorem 3.8",
+      "production": [
+        "repro/src/core.py",
+        "repro/src/verify.py:claim_C4",
+        "outputs/verdict.json:C4_normality"
+      ],
+      "scope": "Finite centered HSIC statistic over 300 seeded trials.",
+      "metrics": {
+        "trials": 300,
+        "approximately_normal": true,
+        "paper_claim_reproduced": false
+      },
+      "limitation": "The statistic is HSIC, not the paper's profile alpha-hat M-estimator."
+    },
+    {
+      "id": "C5",
+      "name": "k20_pairwise_vs_aggregation",
+      "status": "PROXY_PASS",
+      "paper_anchor": "K=20 pairwise versus aggregated balancing comparison",
+      "production": [
+        "repro/src/core.py",
+        "repro/src/verify.py:claim_C5",
+        "outputs/verdict.json:C5_pairwise_vs_agg"
+      ],
+      "scope": "Pair enumeration and one aggregate HSIC contrast on synthetic K=20 data.",
+      "metrics": {
+        "pairwise_count": 186,
+        "aggregation_stable_vs_pairwise": true,
+        "paper_claim_reproduced": false
+      },
+      "limitation": "PEHE, estimator variance, representation collapse, and the paper's experiment are absent."
+    },
+    {
+      "id": "C6",
+      "name": "multi_treatment_causalegm_geodesic_validation",
+      "status": "NOT_REPRODUCED",
+      "paper_anchor": "Multi-Treatment CausalEGM and Wasserstein-geodesic validation",
+      "production": [
+        "README.md",
+        "STATUS.md",
+        "outputs/verdict.json:C6_causal_egm"
+      ],
+      "scope": "Explicit negative evidence for the missing generative and geodesic pipeline.",
+      "limitation": "No CausalEGM training, treatment embeddings, image/semi-synthetic data, PEHE, or interpolation implementation is present."
+    }
+  ],
+  "audit": {
+    "proxy_diagnostics_passed": 4,
+    "claims_tautological_proxy": 1,
+    "claims_not_reproduced": 1,
+    "claims_total": 6,
+    "evidence_points": 8,
+    "evidence_points_total": 12,
+    "paper_claims_verified": 0,
+    "current_score_claim": false,
+    "publication_allowed": false,
+    "attribution": "MachineLearning-Nerd <MachineLearning-Nerd@users.noreply.github.com>"
+  }
+}

@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+title: "Causal Representation Learning with Optimal Compression — independent evidence audit"
+message: "Please cite the paper for its research claims and this repository for the audit artifacts."
+type: software
+authors:
+  - family-names: Liang
+    given-names: Wanting
+  - family-names: Chi
+    given-names: Haoang
+  - family-names: Zhang
+    given-names: Zhiheng
+repository-code: "https://github.com/MachineLearning-Nerd/icml26-causal-representation-optimal-compression"
+url: "https://arxiv.org/abs/2603.11907"
+version: "1.0.0"
+date-released: 2026-08-20
+keywords:
+  - causal representation learning
+  - multi-treatment balancing
+  - HSIC
+  - reproducibility
+preferred-citation:
+  type: article
+  title: "Causal Representation Learning with Optimal Compression under Complex Treatments"
+  authors:
+    - family-names: Liang
+      given-names: Wanting
+    - family-names: Chi
+      given-names: Haoang
+    - family-names: Zhang
+      given-names: Zhiheng
+  journal: "arXiv preprint arXiv:2603.11907"
+  year: 2026
+  url: "https://arxiv.org/abs/2603.11907"

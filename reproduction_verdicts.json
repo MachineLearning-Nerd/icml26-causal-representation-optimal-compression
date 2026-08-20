@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "paper": "puNfWfBFNT",
+  "arxiv": "2603.11907",
+  "paper_version": "v2 (2026-05-02)",
+  "overall_verdict": "INCONCLUSIVE_C1_TAUTOLOGICAL_PROXY_C2_C3_C4_C5_PROXY_ONLY_C6_NOT_REPRODUCED",
+  "claim_statuses": {
+    "C1": "TAUTOLOGICAL_PROXY",
+    "C2": "PROXY_PASS",
+    "C3": "PROXY_PASS",
+    "C4": "PROXY_PASS",
+    "C5": "PROXY_PASS",
+    "C6": "NOT_REPRODUCED"
+  },
+  "evidence": {
+    "proxy_diagnostics_passed": 4,
+    "claims_tautological_proxy": 1,
+    "claims_not_reproduced": 1,
+    "evidence_points": 8,
+    "evidence_points_total": 12,
+    "paper_claims_verified": 0,
+    "current_score_claim": false,
+    "publication_allowed": false
+  },
+  "boundary": "C1 is tautological. C2-C5 are finite NumPy diagnostics only. C6 is not reproduced because the Multi-Treatment CausalEGM, treatment-embedding, PEHE, and Wasserstein-geodesic pipeline is absent. No complete paper-level claim is independently verified.",
+  "attribution": "MachineLearning-Nerd <MachineLearning-Nerd@users.noreply.github.com>"
+}

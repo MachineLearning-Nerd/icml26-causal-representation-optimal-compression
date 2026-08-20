@@ -1,0 +1,26 @@
+{
+  "manifest_version": 1,
+  "repository": "MachineLearning-Nerd/icml26-causal-representation-optimal-compression",
+  "required_paths": [
+    "README.md",
+    "STATUS.md",
+    "CLAIM_EVIDENCE.md",
+    "SOURCE_AUDIT.md",
+    "ENVIRONMENT.md",
+    "REPORT.md",
+    "AUTHOR_THANK_YOU.md",
+    "CITATION.cff",
+    "BRANCH_AUDIT.md",
+    "GATE_READY.md",
+    "claims.json",
+    "reproduction_verdicts.json",
+    "AUTONOMOUS_STATE.json",
+    "outputs/gate.json",
+    "outputs/verdict.json",
+    "publication_gate.json",
+    "docs/paper.pdf",
+    "repro/src/core.py",
+    "repro/src/verify.py",
+    "verify_final.py"
+  ]
+}

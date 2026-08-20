@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "paper": "Causal Representation Learning with Optimal Compression under Complex Treatments",
+  "arxiv": "2603.11907",
+  "submission": "puNfWfBFNT",
+  "paper_version": "v2 (2026-05-02)",
+  "phase": "standardized_claim_audit_publication",
+  "status": "INCONCLUSIVE_C1_TAUTOLOGICAL_PROXY_C2_C3_C4_C5_PROXY_ONLY_C6_NOT_REPRODUCED_NO_PAPER_CLAIMS_VERIFIED_NO_CURRENT_SCORE",
+  "next_action": "Retain the finite-proxy boundary. Implement and independently control the missing learned representation, CausalEGM, PEHE, and geodesic pipeline before upgrading any claim.",
+  "current_score_claim": false,
+  "publication_allowed": false,
+  "author_endorsement_claimed": false,
+  "claim_statuses": {
+    "C1": "TAUTOLOGICAL_PROXY",
+    "C2": "PROXY_PASS",
+    "C3": "PROXY_PASS",
+    "C4": "PROXY_PASS",
+    "C5": "PROXY_PASS",
+    "C6": "NOT_REPRODUCED"
+  },
+  "source": {
+    "paper_pdf_sha256": "2c938c655bae4ed5d90fa106d1f1f893130696966c53382b64033f42017b36a3",
+    "source_tip_before_standardization": "0af4f3f155e081723b18dd55c775626590695bd2"
+  },
+  "repository": {
+    "owner": "MachineLearning-Nerd",
+    "canonical_email": "MachineLearning-Nerd@users.noreply.github.com",
+    "github": "https://github.com/MachineLearning-Nerd/icml26-causal-representation-optimal-compression",
+    "branches": 1,
+    "recovery_bundle_sha256": "2d292e9e85a63014996690a8976ce28e8944c28fc2ec01e4c5c12f7aa2a5e73b"
+  }
+}

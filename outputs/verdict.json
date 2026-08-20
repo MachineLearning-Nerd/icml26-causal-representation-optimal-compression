@@ -4,6 +4,7 @@
   "arxiv": "2603.11907",
   "paper_version_pinned": "v2 (2026-05-02)",
   "scope": "bounded_clean_room_numpy_proxies",
+  "overall_status": "INCONCLUSIVE_C1_TAUTOLOGICAL_PROXY_C2_C3_C4_C5_PROXY_ONLY_C6_NOT_REPRODUCED_NO_PAPER_CLAIMS_VERIFIED_NO_CURRENT_SCORE",
   "paper_reproduction": "inconclusive",
   "claims": {
     "C1_gen_bound": {
@@ -31,31 +32,11 @@
     },
     "C3_hsic_O1": {
       "cases": [
-        {
-          "K": 2,
-          "HSIC": 0.010219,
-          "time_s": 0.0007
-        },
-        {
-          "K": 5,
-          "HSIC": 0.020746,
-          "time_s": 0.0007
-        },
-        {
-          "K": 10,
-          "HSIC": 0.024546,
-          "time_s": 0.0006
-        },
-        {
-          "K": 20,
-          "HSIC": 0.016151,
-          "time_s": 0.0007
-        },
-        {
-          "K": 50,
-          "HSIC": 0.020507,
-          "time_s": 0.0006
-        }
+        {"K": 2, "HSIC": 0.010219, "time_s": 0.0007},
+        {"K": 5, "HSIC": 0.020746, "time_s": 0.0007},
+        {"K": 10, "HSIC": 0.024546, "time_s": 0.0006},
+        {"K": 20, "HSIC": 0.016151, "time_s": 0.0007},
+        {"K": 50, "HSIC": 0.020507, "time_s": 0.0006}
       ],
       "max_time_ratio": 1.17,
       "O1_wrt_K": true,
@@ -90,5 +71,11 @@
   "claims_total": 6,
   "proxy_diagnostics_passed": 4,
   "claims_tautological_proxy": 1,
-  "paper_claims_verified": 0
+  "claims_not_reproduced": 1,
+  "evidence_points": 8,
+  "evidence_points_total": 12,
+  "paper_claims_verified": 0,
+  "current_score_claim": false,
+  "publication_allowed": false,
+  "attribution": "MachineLearning-Nerd <MachineLearning-Nerd@users.noreply.github.com>"
 }

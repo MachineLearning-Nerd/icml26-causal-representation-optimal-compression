@@ -26,6 +26,10 @@ rep: dict = {
     "arxiv": "2603.11907",
     "paper_version_pinned": "v2 (2026-05-02)",
     "scope": "bounded_clean_room_numpy_proxies",
+    "overall_status": (
+        "INCONCLUSIVE_C1_TAUTOLOGICAL_PROXY_C2_C3_C4_C5_PROXY_ONLY_"
+        "C6_NOT_REPRODUCED_NO_PAPER_CLAIMS_VERIFIED_NO_CURRENT_SCORE"
+    ),
     "paper_reproduction": "inconclusive",
     "claims": {},
 }
@@ -204,7 +208,20 @@ if __name__ == "__main__":
     rep["claims_tautological_proxy"] = sum(
         1 for value in rep["claims"].values() if value.get("VERDICT") == "TAUTOLOGICAL_PROXY"
     )
+    rep["claims_not_reproduced"] = sum(
+        1
+        for value in rep["claims"].values()
+        if value.get("VERDICT") == "NOT_REPRODUCED"
+        or value.get("paper_status") == "NOT_REPRODUCED"
+    )
+    rep["evidence_points"] = 8
+    rep["evidence_points_total"] = 12
     rep["paper_claims_verified"] = 0
+    rep["current_score_claim"] = False
+    rep["publication_allowed"] = False
+    rep["attribution"] = (
+        "MachineLearning-Nerd <MachineLearning-Nerd@users.noreply.github.com>"
+    )
     print(
         f"Proxy diagnostics: {rep['proxy_diagnostics_passed']}/5; "
         f"tautological proxies: {rep['claims_tautological_proxy']}; "
